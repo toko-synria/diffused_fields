@@ -24,9 +24,39 @@ This package provides implementations of both traditional diffusion solvers and 
 
 Follow the installation instructions of the **[diffused_fields_robotics](https://github.com/idiap/diffused_fields_robotics)**
 
+
 ### Stand-alone Installation Using Python 3.12 virtual environment
 
+This repository uses [Git LFS](https://git-lfs.github.com/) to store large files
+(e.g. data, models, point clouds).
+
+
+Install Git LFS (Ubuntu)
 ```bash
+sudo apt install git-lfs
+```
+Install Git LFS (macOS) using homebrew
+```bash
+brew install git-lfs
+```
+run once to enable LFS
+```bash
+git lfs install 
+```
+
+If you cloned the repository before installing and enabling git-lfs pull the large files
+```bash
+git lfs pull
+```
+
+Clone this repository
+```bash
+git clone https://github.com/idiap/diffused_fields.git
+```
+Create a virtual environment and install the package in editable mode:
+```bash
+# go to cloned directory
+cd diffused_fields
 # Create a virtual environment named 'df' with Python 3.12
 python3.12 -m venv df
 
