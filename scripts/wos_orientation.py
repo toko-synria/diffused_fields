@@ -42,7 +42,7 @@ grid = pcloud.get_bounding_box_grid(bounding_box_scalar=1, nb_points=11)
 grid.get_center()
 
 # Extract cross-sections at mid-points using grid.center
-grid.vertices = extract_plane(grid.vertices, axis="x", value=grid.center[0])
+# grid.vertices = extract_plane(grid.vertices, axis="x", value=grid.center[0])
 wos_diffusion.diffuse_orientations_on_grid(grid)
 
 
