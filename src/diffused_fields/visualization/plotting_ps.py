@@ -85,8 +85,6 @@ def animate_tool_trajectory(position_trajectory, orientation_trajectory, mesh):
         # User input handler
         def my_callback():
             # Set the window position on the right side
-            io = imgui.GetIO()
-            # screen_width = io.DisplaySize.x
             # screen_height = io.DisplaySize.y
             # screen_width, screen_height = (
             #     io.DisplaySize
@@ -107,19 +105,9 @@ def animate_tool_trajectory(position_trajectory, orientation_trajectory, mesh):
             changed, state["speed"] = imgui.SliderFloat(
                 "Speed (s/frame)", state["speed"], 0.01, 1.0
             )
-            if imgui.Button("Play/Pause [Space]"):
+            if imgui.Button("Play/Pause"):
                 state["playing"] = not state["playing"]
-            imgui.Text("Press SPACE to toggle play/pause")
             imgui.End()
-
-            # Listen for spacebar
-            # io = imgui.GetIO()
-            if io.KeysDown[32]:  # 32 is the keycode for space
-                if not state.get("space_pressed", False):
-                    state["playing"] = not state["playing"]
-                    state["space_pressed"] = True
-            else:
-                state["space_pressed"] = False
 
             # Time-based update
             current_time = time.time()
